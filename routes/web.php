@@ -17,12 +17,16 @@ Route::get('/', function () {
 //$this->app['router']->get('/', function() { return 'Coucou'; });
 //app('router')->get('/', function() { return 'Coucou'; });
 
-Route::get('{n}', function($n) {
-    return 'Je suis la page ' . $n . ' !';
-});
+//Route::get('{n}', function($n) {
+//    return 'Je suis la page ' . $n . ' !';
+//});
+//
+//Route::get('/home', ['as' => 'home', function()
+//{
+//    return 'Je suis la page d\'accueil !';
+//}]);
 
-Route::get('/home', ['as' => 'home', function()
-{
-    return 'Je suis la page d\'accueil !';
-}]);
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
