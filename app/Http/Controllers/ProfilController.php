@@ -3,6 +3,7 @@
 namespace projetPhp\Http\Controllers;
 
 use Illuminate\Http\Request;
+use projetPhp\Profil;
 
 class ProfilController extends Controller
 {
@@ -16,13 +17,14 @@ class ProfilController extends Controller
         return view('profil');
     }
 
-    protected function create(array $data)
+    public function create(Request $request)
     {
-        return User::create([
-            'nom' => $data['nom'],
-            'prenom' => $data['prenom'],
-            'departement' => $data['departement'],
-            'email' => $data['email'],
+        return Profil::create([
+            'nom' => $request->input('nom'),
+            'prenom' => $request->input('prenom'),
+            'departement' => $request->input('departement'),
+            'email' => $request->input('email'),
         ]);
     }
+
 }

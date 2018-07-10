@@ -1,26 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container">
-    <form action="{{ url('profil') }}" method="POST">
-        {{ csrf_field() }}
-        <div class="form-group">
-            <label for="inputNom">Nom</label>
-            <input type="text" class="form-control" id="inputNom" placeholder="Nom">
-        </div>
-        <div class="form-group">
-            <label for="inputPrenom">Prénom</label>
-            <input type="text" class="form-control" id="inputPrenom" placeholder="Prenom">
-        </div>
-        <div class="form-group">
-            <label for="inputDepartement">Département</label>
-            <input type="number" class="form-control" id="inputDepartement" placeholder="Departement">
-        </div>
-        <div class="form-group">
-            <label for="inputMail">Email</label>
-            <input type="email" class="form-control" id="inputMail" placeholder="Mail">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <form method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
+        {!! csrf_field() !!}
+        <label for="nom">Entrez votre nom : </label>
+        <input name="nom" type="text" id="nom">
+
+        <br>
+
+        <label for="prenom">Entrez votre prenom : </label>
+        <input name="prenom" type="text" id="prenom">
+
+        <br>
+
+        <label for="departement">Entrez votre departement : </label>
+        <input name="departement" type="number" id="departement">
+
+        <br>
+
+        <label for="email">Entrez votre email : </label>
+        <input name="email" type="email" id="email">
+
+
+
+
+        <input type="submit" value="Envoyer !">
     </form>
 </div>
 @endsection
