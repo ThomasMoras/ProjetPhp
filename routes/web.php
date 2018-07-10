@@ -14,19 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//$this->app['router']->get('/', function() { return 'Coucou'; });
-//app('router')->get('/', function() { return 'Coucou'; });
-
-//Route::get('{n}', function($n) {
-//    return 'Je suis la page ' . $n . ' !';
-//});
-//
-//Route::get('/home', ['as' => 'home', function()
-//{
-//    return 'Je suis la page d\'accueil !';
-//}]);
-
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/profil', 'ProfilController@index')->name('profil');
+
+Route::post('/profil', 'ProfilController@create')->name('profil');
