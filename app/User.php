@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function domaine(){
+        return  $this->hasOne('App\Domaine');
+    }
+
+    public function Contrat(){
+        return  $this->hasOne('App\Contrat');
+    }
 }
