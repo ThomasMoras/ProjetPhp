@@ -29,14 +29,16 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Accueil
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        @if(Auth::check())
+&nbsp;                          <li ><a href="{{ route('profil') }}">Profile</a></li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
