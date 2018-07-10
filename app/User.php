@@ -15,8 +15,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    'name', 'email', 'password',
+];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,12 +27,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function domaine(){
-        return  $this->hasOne('App\Domaine');
-    }
+//    public function domaine(){
+//        return  $this->hasOne('App\Domaine');
+//    }
+//
+//    public function Contrat(){
+//        return  $this->hasOne('App\Contrat');
+//    }
 
-    public function Contrat(){
-        return  $this->hasOne('App\Contrat');
+    public function competences()
+    {
+        return $this->belongsToMany('App\Competence');
     }
 
     public function competences()
