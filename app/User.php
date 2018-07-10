@@ -34,4 +34,9 @@ class User extends Authenticatable
     public function Contrat(){
         return  $this->hasOne('App\Contrat');
     }
+
+    public function competences()
+    {
+        return $this->belongsToMany(Competence::class);
+    }
 }

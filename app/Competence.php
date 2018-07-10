@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Competence extends Model
 {
-    public function user()
+
+    protected $fillable = [
+        'nom'
+    ];
+
+
+    public function competences()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsToMany(User::class);
     }
 }
