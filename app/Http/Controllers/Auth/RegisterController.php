@@ -2,7 +2,10 @@
 
 namespace projetPhp\Http\Controllers\Auth;
 
+use projetPhp\Contrat;
+use projetPhp\Domaine;
 use projetPhp\User;
+use projetPhp\Competence;
 use projetPhp\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -62,10 +65,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user =  User::create([
             'name' => $data['name'],
+            'prenom' =>  "",
+            'departement' => 0,
+            'description' => "",
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        return $user;
     }
 }
