@@ -2,6 +2,7 @@
 
 namespace projetPhp\Http\Controllers;
 
+use projetPhp\Contrat;
 use projetPhp\Domaine;
 use Illuminate\Http\Request;
 use projetPhp\Profil;
@@ -16,21 +17,22 @@ class ProfilController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('profil',['utilisateur' => $user]);
+        $domaines = Domaine::all();
+        $contrats = Contrat::all();
+        return view('profil',['utilisateur' => $user, 'domaines' => $domaines, 'contrats' => $contrats]);
     }
 
     public function create(Request $request)
     {
         $user = auth()->user();
-        $domaine = new Domaine(['nom' => $request->input('domaine')]);
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
         $user->description = $request->input('description');
         $user->departement = $request->input('departement');
 
-        $domaine->user_id = $user->id;
-        $user->domaine()->save($domaine);
-//        $user->load('domaine');
+        $domaine = Domaine::find($request->input('domaine'));
+//        $user->domaine()->save($domaine);
+        $user->domaine_id = $domaine->id;
         $user->save();
         return $user;
     }

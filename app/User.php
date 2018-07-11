@@ -4,6 +4,7 @@ namespace projetPhp;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use projetPhp\Domaine;
 
 class User extends Authenticatable
 {
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-    'name', 'prenom', 'description', 'departement', 'email', 'password',
+    'name', 'prenom', 'description', 'departement', 'email', 'password', 'domaine_id', 'contrat_id'
 ];
 
     /**
@@ -27,9 +28,17 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function domaine(){
-        return  $this->hasOne(Domaine::class);
+    public function domaine() {
+        return $this->belongsTo(Domaine::class);
     }
+
+    public function contrat() {
+        return $this->belongsTo(Contrat::class);
+    }
+
+//    public function domaine(){
+//        return  $this->hasOne(Domaine::class);
+//    }
 
 //    public function Contrat(){
 //        return  $this->hasOne(Contrat::class);

@@ -19,12 +19,21 @@
             </div>
             <div class="form-group">
                 <label for="domaine">Entrez votre domaine : </label>
-                @if($utilisateur->domaine != null)
-                     <input name="domaine" type="text" class="form-control" id="domaine" value="{{$utilisateur->domaine->nom}}">
-                @else
-                    <input name="domaine" type="text" class="form-control" id="domaine">
-                @endif
-
+                <select name="domaine" id="domaine" class="form-control">
+                    <option selected value="{{$utilisateur->domaine->id}}">{{$utilisateur->domaine->nom}}</option>
+                    @foreach ($domaines as $domaine)
+                        <option value ="{{$domaine->id}}">{{$domaine->nom}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contrat">Entrez votre contrat : </label>
+                <select name="contrat" id="contrat" class="form-control">
+                    <option selected value="{{$utilisateur->contrat->id}}">{{$utilisateur->contrat->nom}}</option>
+                    @foreach ($contrats as $contrat)
+                        <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="description">Entrez votre description : </label>
