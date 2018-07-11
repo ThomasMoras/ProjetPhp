@@ -4,6 +4,40 @@
 <!-- Wrapper -->
 <div id="wrapper">
 
+    <!-- Header -->
+    <header id="header">
+        @if(Auth::check())
+            <h1><a href="/home">KiproMeet</a></h1>
+        @else
+            <h1><a href="/">KiproMeet</a></h1>
+        @endif
+        <nav class="links">
+            <ul>
+                @if(Auth::check())
+                    <li ><a href="{{ route('profil') }}">Profile</a></li>
+                    <li ><a href="{{ route('search') }}">Recherche</a></li>
+                @endif
+                @if (Auth::guest())
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                @else
+                    <div class="pull-right">
+                        <li><a href="#"> {{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout</a></li>
+
+                    </div>
+     
+                @endif
+            </ul>
+        </nav>
+        <nav class="main">
+            <ul>
+                <!-- Authentication Links -->
+            </ul>
+        </nav>
+    </header>
+
     <!-- Menu -->
     <section id="menu">
         <!-- Search -->

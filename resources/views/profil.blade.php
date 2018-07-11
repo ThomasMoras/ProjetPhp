@@ -110,7 +110,7 @@
                 <div class="row">
                     <label class="col-2 control-label" for="textinput">Prénom</label>
                     <div class="col-10">
-                        <input type="text" placeholder="Address Line 2" class="form-control">
+                        <input name="prenom" type="text" class="form-control" id="prenom" value="{{$utilisateur->prenom}}">
                     </div>
                 </div>
             </div>
@@ -123,7 +123,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="form-group" style="margin-top: 2%">
                 <div class="row">
