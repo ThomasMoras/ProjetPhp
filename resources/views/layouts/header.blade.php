@@ -26,9 +26,12 @@
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
-                <div class="pull-right">
+                <div class="pull-right" >
                     <li><a href="#"> {{ Auth::user()->name }}</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             @endif
         </ul>
