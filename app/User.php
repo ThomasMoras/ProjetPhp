@@ -4,7 +4,6 @@ namespace projetPhp;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use projetPhp\Domaine;
 
 class User extends Authenticatable
 {
@@ -36,21 +35,7 @@ class User extends Authenticatable
         return $this->belongsTo(Contrat::class);
     }
 
-//    public function domaine(){
-//        return  $this->hasOne(Domaine::class);
-//    }
-
-//    public function Contrat(){
-//        return  $this->hasOne(Contrat::class);
-//    }
-
-//    public function competences()
-//    {
-//        return $this->belongsToMany('App\Competence');
-//    }
-
-//    public function competences()
-//    {
-//        return $this->belongsToMany(Competence::class);
-//    }
+    public function competences() {
+        return $this->belongsToMany(Competence::class);
+    }
 }

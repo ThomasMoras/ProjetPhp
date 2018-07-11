@@ -81,7 +81,6 @@
             <img src="assets/img/items.png" class="img-responsive" alt="">
         </div>
     </div>
-@endsection
 
 <div id="g">
     <div class="container">

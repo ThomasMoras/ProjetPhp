@@ -15,10 +15,10 @@ class CreateUserCompetenceTable extends Migration
     {
         Schema::create('user_competence', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('user');
             $table->integer('competence_id')->unsigned();
-
+            $table->foreign('competence_id')->references('id')->on('competence');
             $table->timestamps();
         });
     }
