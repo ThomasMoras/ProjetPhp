@@ -21,7 +21,12 @@
             </div>
             <div class="form-group">
                 <label for="domaine">Entrez votre domaine : </label>
-                <input name="domaine" type="text" class="form-control" id="domaine" value="{{$utilisateur->domaine->nom}}">
+                @if($utilisateur->domaine != null)
+                     <input name="domaine" type="text" class="form-control" id="domaine" value="{{$utilisateur->domaine->nom}}">
+                @else
+                    <input name="domaine" type="text" class="form-control" id="domaine">
+                @endif
+
             </div>
             <div class="form-group">
                 <label for="description">Entrez votre description : </label>
