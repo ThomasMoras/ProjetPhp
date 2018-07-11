@@ -20,7 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('description')->nullable();
             $table->integer('departement')->nullable();
             $table->integer('domaine_id')->unsigned();
-            $table->foreign('domaine_id')->references('id')->on('domaine');
+            $table->foreign('domaine_id')->references('id')->on('contrat');
+            $table->integer('contrat_id')->unsigned();
+            $table->foreign('contrat_id')->references('id')->on('contrat');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
