@@ -11,6 +11,8 @@ class DomaineTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('domaines')->insert([
+            'nom' => 'Informatique'
+        ]);
     }
 }

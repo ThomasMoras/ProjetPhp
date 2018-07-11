@@ -11,6 +11,8 @@ class CompetenceTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('competences')->insert([
+        'nom' => 'PHP'
+        ]);
     }
 }

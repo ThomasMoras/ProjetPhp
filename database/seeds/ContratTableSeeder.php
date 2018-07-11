@@ -11,6 +11,8 @@ class ContratTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('contrats')->insert([
+            'nom' => 'CDI'
+        ]);
     }
 }
