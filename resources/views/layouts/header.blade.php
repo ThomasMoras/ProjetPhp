@@ -22,31 +22,23 @@
                 <li ><a href="{{ route('profil') }}">Profile</a></li>
                 <li ><a href="{{ route('search') }}">Recherche</a></li>
             @endif
-        </ul>
-    </nav>
-    <nav class="links" >
-        <ul>
-            <!-- Authentication Links -->
             @if (Auth::guest())
                 <li><a href="{{ route('login') }}">Login</a></li>
                 <li><a href="{{ route('register') }}">Register</a></li>
             @else
-                <li>
-                    <a href="#" role="button" >
-                        {{ Auth::user()->name }}
-                    </a>
-                    <li>
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </li>
+                <div class="pull-right">
+                    <li><a href="#"> {{ Auth::user()->name }}</a></li>
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                </div>
             @endif
         </ul>
     </nav>
+    <nav class="main">
+        <ul>
+            <!-- Authentication Links -->
+        </ul>
+    </nav>
+
 </header>
 <div>
     @yield('main')

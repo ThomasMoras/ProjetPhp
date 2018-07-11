@@ -82,7 +82,11 @@
             <img src="assets/img/items.png" class="img-responsive" alt="">
         </div>
     </div>
+<<<<<<< HEAD
 </div>
+=======
+
+>>>>>>> master
 <div id="g">
     <div class="container">
         <div class="row centered">

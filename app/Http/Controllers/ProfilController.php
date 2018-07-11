@@ -31,10 +31,9 @@ class ProfilController extends Controller
         $user->departement = $request->input('departement');
 
         $domaine = Domaine::find($request->input('domaine'));
-//        $user->domaine()->save($domaine);
         $user->domaine_id = $domaine->id;
         $user->save();
-        return $user;
+        return redirect()->route('profil');
     }
 
 }
