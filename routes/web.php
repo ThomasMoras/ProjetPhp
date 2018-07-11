@@ -11,13 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use projetPhp\User;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+
+
+Route::get('/', function () {
+    $users = User::all();
+    return view('welcome',['utilisateurs' => $users]);
+});
 
 Route::get('/profil', 'ProfilController@index')->name('profil');
 

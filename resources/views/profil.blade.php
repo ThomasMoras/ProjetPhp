@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="container">
     <form method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
         {!! csrf_field() !!}
