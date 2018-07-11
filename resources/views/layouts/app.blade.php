@@ -13,7 +13,11 @@
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="/">KiproMeet</a></h1>
+        @if(Auth::check())
+            <h1><a href="/home">KiproMeet</a></h1>
+        @else
+            <h1><a href="/">KiproMeet</a></h1>
+        @endif
         <nav class="links">
             <ul>
                 @if(Auth::check())

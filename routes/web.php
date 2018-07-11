@@ -24,6 +24,8 @@ Route::get('/', function () {
     return view('welcome',['utilisateurs' => $users]);
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/profil', 'ProfilController@index')->name('profil');
 
 Route::post('/profil', 'ProfilController@create')->name('profil');
