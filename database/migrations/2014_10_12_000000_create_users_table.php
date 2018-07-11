@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('departement')->nullable();
             $table->string('email')->unique();
             $table->string('password');
+            $table->integer('domaine_id')->unsigned();
+            $table->foreign('domaine_id')->references('id')->on('domaine');
             $table->rememberToken();
             $table->timestamps();
         });

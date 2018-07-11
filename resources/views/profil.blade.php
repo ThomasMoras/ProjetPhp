@@ -21,11 +21,12 @@
             </div>
             <div class="form-group">
                 <label for="domaine">Entrez votre domaine : </label>
-                @if($utilisateur->domaine != null)
-                     <input name="domaine" type="text" class="form-control" id="domaine" value="{{$utilisateur->domaine->nom}}">
-                @else
-                    <input name="domaine" type="text" class="form-control" id="domaine">
-                @endif
+                <select id="domaine" class="form-control">
+                    <option selected>Choose...</option>
+                    @foreach ($domaines as $domaine)
+                        <option>{{$domaine->nom}}</option>
+                    @endforeach
+                </select>
 
             </div>
             <div class="form-group">

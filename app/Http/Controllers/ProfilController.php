@@ -16,7 +16,8 @@ class ProfilController extends Controller
     public function index()
     {
         $user = auth()->user();
-        return view('profil',['utilisateur' => $user]);
+        $domaines = Domaine::all();
+        return view('profil',['utilisateur' => $user, 'domaines' => $domaines]);
     }
 
     public function create(Request $request)
