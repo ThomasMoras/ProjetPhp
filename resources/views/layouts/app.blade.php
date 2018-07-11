@@ -38,6 +38,7 @@
                     <ul class="nav navbar-nav">
                         @if(Auth::check())
 &nbsp;                          <li ><a href="{{ route('profil') }}">Profile</a></li>
+&nbsp;                          <li ><a href="{{ route('search') }}">Recherche</a></li>
                         @endif
                     </ul>
 
