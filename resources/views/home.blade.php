@@ -1,35 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            @foreach ($utilisateurs as $user)
-                <article class="post">
-                    <header>
-                        <div class="title">
-                            <h2><a href="single.html">{{$user->name}}</a></h2>
-                            <p>catégorie a binder blablabla</p>
-                        </div>
-                        <div class="meta">
-                            <time class="published" datetime="2015-10-25">October 25, 2015</time>
-                        </div>
-                    </header>
-                    <p>Je raconte ma vie ... </p>
-                    <footer>
-                        <ul class="actions">
-                            <li><a href="single.html" class="button large">Profil complet</a></li>
-                        </ul>
-                    </footer>
-                </article>
-            @endforeach
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                @foreach ($utilisateurs as $user)
+                    <article class="post">
+                        <header>
+                            <div class="title">
+                                <h2>{{$user->name}} {{$user->prenom}}</h2>
+                                <p>{{$user->domaine->nom}}</p>
+                            </div>
+                            <div class="meta">
+                                <p>Inscrit le: <br/>{{$user->created_at}}</p>
+                            </div>
+                        </header>
+                        <p>{{$user->description}}</p>
+                    </article>
+                @endforeach
+            </div>
         </div>
     </div>
-</div>
 @endsection
 
+
 @section('sidebar')
-<!-- Sidebar -->
 <section id="sidebar">
     <!-- Intro -->
     <section id="intro">
@@ -77,4 +72,5 @@
             <p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
         </section>
     </section>
+</section>
 @endsection

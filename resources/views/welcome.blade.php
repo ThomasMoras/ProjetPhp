@@ -1,3 +1,4 @@
+@extends('layouts.header')
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -29,11 +30,12 @@
 </head>
 
 <body>
-
+@section('main')
 <div id="h">
     <div class="logo">
        <h2>KiproMeet
-        <img src="../../public/assets/img/logo.PNG"/>
+        <img src="assets/img/logo.PNG"/>
+       </h2>
     </div><!--/logo-->
     <div class="container centered">
         <div class="row">
@@ -63,7 +65,6 @@
         </div><!--/row-->
     </div><!--/container-->
 </div><!--H-->
-
 <div class="container ptb">
     <div class="row">
         <h2 class="centered mb">I craft handsome sites & stunning apps<br/>that empower your startup.</h2>
@@ -81,8 +82,7 @@
             <img src="assets/img/items.png" class="img-responsive" alt="">
         </div>
     </div>
-@endsection
-
+</div>
 <div id="g">
     <div class="container">
         <div class="row centered">
@@ -249,7 +249,6 @@
         </div><!--/row-->
     </div><!--/container-->
 </div><!--/.G-->
-
 <div id="sep">
     <div class="container">
         <div class="row centered">
@@ -261,7 +260,6 @@
         </div><!--/row-->
     </div><!--/container-->
 </div><!--/.sep-->
-
 <div id="f">
     <div class="container">
         <div class="row centered">
@@ -274,6 +272,7 @@
         </div>
     </div><!--/container-->
 </div><!--/.F-->
+@endsection
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
