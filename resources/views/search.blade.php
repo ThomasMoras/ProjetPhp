@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="row">
-        <div class="col-4"> </div>
-        <form class="form-horizontal col-6 box" role="form" method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
+        <div class="col-3"> </div>
+        <form class="form-horizontal col-6 box" role="form" method="POST" action="{!! url('search') !!}" accept-charset="UTF-8">
             {!! csrf_field() !!}
             <fieldset>
 
@@ -70,8 +70,37 @@
             </fieldset>
 
         </form>
-
     </div><!-- /.col-lg-12 -->
-
+    @if($users != null)
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Domaine</th>
+                <th scope="col">Contrat</th>
+                <th scope="col">Département</th>
+            </tr>
+            </thead>
+            <tbody>
+            @if($users->count() > 0)
+                @foreach ($users as $user)
+                <tr>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->prenom}}</td>
+                    <td>{{$user->domaine->nom}}</td>
+                    <td>{{$user->contrat->nom}}</td>
+                    <td>{{$user->departement}}</td>
+                </tr>
+                @endforeach
+            @endif
+            </tbody>
+        </table>
+    </div>
+    @endif
     </div><!-- /.row -->
+
+
+
 @endsection

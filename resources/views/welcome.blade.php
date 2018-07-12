@@ -70,8 +70,6 @@
     </div><!--/container-->
 </div><!--H-->
 
-
->>>>>>> master
 <div id="g">
     <div class="container">
         <div class="row centered">
@@ -344,8 +342,8 @@
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
         </div><!-- portfolio -->
-
-
+    </div>
+</div>
 
 
 <div id="f">

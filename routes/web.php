@@ -31,3 +31,5 @@ Route::get('/profil', 'ProfilController@index')->name('profil');
 Route::post('/profil', 'ProfilController@create')->name('profil');
 
 Route::get('/search', 'SearchController@index')->name('search');
+
+Route::post('/search', 'SearchController@create')->name('search');

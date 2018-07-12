@@ -5,11 +5,14 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 @foreach ($utilisateurs as $user)
+                    @if($user->id != $current_user->id)
                     <article class="post">
                         <header>
                             <div class="title">
                                 <h2>{{$user->name}} {{$user->prenom}}</h2>
-                                <p>{{$user->domaine->nom}}</p>
+                                @if($user->domaine != null)
+                                     <p>{{$user->domaine->nom}}</p>
+                                @endif
                             </div>
                             <div class="meta">
                                 <p>Inscrit le: <br/>{{$user->created_at}}</p>
@@ -17,6 +20,7 @@
                         </header>
                         <p>{{$user->description}}</p>
                     </article>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -30,8 +34,8 @@
     <section id="intro">
         <a href="#" class="logo"><img src="assets/img/logo.png" alt="" /></a>
         <header>
-            <h2>Mon Profil</h2>
-            <p>blablabla</p>
+            <h2>{{$current_user->name }}   {{$current_user->prenom}}</h2>
+            <p>{{$current_user->description}}</p>
         </header>
     </section>
 
