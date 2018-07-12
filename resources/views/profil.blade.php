@@ -4,15 +4,19 @@
 
     <div class="row">
         <div class="col-4"> </div>
-        <form class="form-horizontal col-6 box" role="form" method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
+
+        <form class="form-horizontal col-6 box" role="form" enctype="multipart/form-data" method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
             {!! csrf_field() !!}
             <fieldset>
 
                 <!-- Form Name -->
                 <legend style="text-align: center; font-size: 25px">Modification des informations</legend>
                 <!-- Text input-->
-
+                @if($utilisateur->image != null)
+                <img src="/images/{{ $utilisateur->image }}">
+                @endif
                 <div class="row">
+
                     <div class="col-6" style="margin-top: 3%">
                         <div class="row">
                             <label class="col-4 control-label" for="textinput">Nom</label>
@@ -109,8 +113,8 @@
 
                 <div class="form-group" style="margin-top: 2%">
                     <div class="row">
-                        <label class="col-2 control-label" for="textinput">Image</label>
-                        <input class="col-2" type="file" name="image" id="file">
+                        <label class="col-2 control-label" for="image_file">Image</label>
+                        <input class="col-8" type="file" name="image_file" id="image_file">
                     </div>
                 </div>
 

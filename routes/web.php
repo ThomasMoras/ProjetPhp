@@ -31,3 +31,9 @@ Route::get('/profil', 'ProfilController@index')->name('profil');
 Route::post('/profil', 'ProfilController@create')->name('profil');
 
 Route::get('/search', 'SearchController@index')->name('search');
+
+
+Route::get('/conversations', 'ConversationsController@index')->name('conversations');
+Route::get('/conversations/{user}', 'ConversationsController@show')
+    ->name('conversations.show');
+Route::post('/conversations/{user}', 'ConversationsController@store')->name('conversations.store');;
