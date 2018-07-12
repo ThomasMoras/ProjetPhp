@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <div class="row" style="margin-top: 2%">
+
+    <div class="row">
         <div class="col-4"> </div>
         <form class="form-horizontal col-6 box" role="form" method="POST" action="{!! url('profil') !!}" accept-charset="UTF-8">
             {!! csrf_field() !!}
@@ -33,7 +33,6 @@
                 </div>
 
                 <div class="row">
-
                     <div class="col-6" style="margin-top: 2%">
                         <div class="row">
                             <label class="col-4 control-label" for="textinput">Département</label>
@@ -58,16 +57,34 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="form-group" style="margin-top: 2%">
-                    <div class="row">
-                        <label class="col-2 control-label" for="textinput">Email</label>
-                        <div class="col-10">
-                            <input name="email" type="email" class="form-control" id="email" value="{{$utilisateur->email}}">
+                <div class="row">
+                    <div class="col-5" style="margin-top: 2%">
+                        <div class="row">
+                            <label class="col-5 control-label" for="textinput">Contrat</label>
+                            <div class="col-7">
+                                <select name="contrat" id="contrat" class="form-control">
+                                    @if($contrats->count() > 0)
+                                        <option selected value="{{$utilisateur->contrat->id}}">{{$utilisateur->contrat->nom}}</option>
+                                        @foreach ($contrats as $contrat)
+                                            <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-7" style="margin-top: 2%">
+                        <div class="row">
+                            <label class="col-2 control-label" for="textinput">Email</label>
+                            <div class="col-10">
+                                <input name="email" type="email" class="form-control" id="email" value="{{$utilisateur->email}}">
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="form-group" style="margin-top: 2%">

@@ -5,7 +5,6 @@ namespace projetPhp\Http\Controllers;
 use projetPhp\Contrat;
 use projetPhp\Domaine;
 use Illuminate\Http\Request;
-use projetPhp\Profil;
 
 class ProfilController extends Controller
 {
@@ -32,6 +31,10 @@ class ProfilController extends Controller
 
         $domaine = Domaine::find($request->input('domaine'));
         $user->domaine_id = $domaine->id;
+
+        $contrat = Contrat::find($request->input('contrat'));
+        $user->contrat_id = $contrat->id;
+
         $user->save();
         return redirect()->route('profil');
     }
