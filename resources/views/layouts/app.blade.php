@@ -16,6 +16,7 @@
                 @if(Auth::check())
                     <li ><a href="{{ route('profil') }}">Profile</a></li>
                     <li ><a href="{{ route('search') }}">Recherche</a></li>
+                    <li ><a href="{{ route('conversations') }}">Conversation</a></li>
                 @endif
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Login</a></li>
