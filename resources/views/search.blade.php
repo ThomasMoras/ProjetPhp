@@ -25,6 +25,7 @@
                             <label class="col-4 control-label" for="textinput">Domaine</label>
                             <div class="col-8">
                                 <select name="domaine" id="domaine" class="form-control">
+                                    <option value ="">Aucun critère</option>
                                     @if($domaines->count() > 0)
                                         @foreach ($domaines as $domaine)
                                             <option value ="{{$domaine->id}}">{{$domaine->nom}}</option>
@@ -50,6 +51,7 @@
                     <label class="col-2 control-label" for="textinput">Contrat</label>
                     <div class="col-10">
                         <select name="contrat" id="contrat" class="form-control">
+                            <option value ="">Aucun critère</option>
                             @if($contrats->count() > 0)
                                 @foreach ($contrats as $contrat)
                                     <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>

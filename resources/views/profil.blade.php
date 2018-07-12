@@ -52,9 +52,20 @@
                             <div class="col-8">
                                 <select name="domaine" id="domaine" class="form-control">
                                     @if($domaines->count() > 0)
-                                        <option selected value="{{$utilisateur->domaine->id}}">{{$utilisateur->domaine->nom}}</option>
+                                        @if($utilisateur->domaine != null)
+                                            <option selected value="{{$utilisateur->domaine->id}}">{{$utilisateur->domaine->nom}}</option>
+                                        @else
+                                            <option selected value="">Vide</option>
+                                        @endif
                                         @foreach ($domaines as $domaine)
-                                            <option value ="{{$domaine->id}}">{{$domaine->nom}}</option>
+                                                @if($utilisateur->domaine != null)
+                                                    @if($domaine->id != $utilisateur->domaine->id)
+                                                        <option value ="{{$domaine->id}}">{{$domaine->nom}}</option>
+                                                    @endif
+                                                @endif
+                                                @if($utilisateur->domaine == null)
+                                                    <option value ="{{$domaine->id}}">{{$domaine->nom}}</option>
+                                                @endif
                                         @endforeach
                                     @endif
                                 </select>
@@ -70,9 +81,20 @@
                             <div class="col-7">
                                 <select name="contrat" id="contrat" class="form-control">
                                     @if($contrats->count() > 0)
+                                        @if($utilisateur->contrat != null)
                                         <option selected value="{{$utilisateur->contrat->id}}">{{$utilisateur->contrat->nom}}</option>
+                                        @else
+                                            <option selected value="">Vide</option>
+                                        @endif
                                         @foreach ($contrats as $contrat)
-                                            <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>
+                                            @if($utilisateur->contrat != null)
+                                                @if($contrat->id != $utilisateur->contrat->id)
+                                                    <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>
+                                                @endif
+                                            @endif
+                                             @if($utilisateur->contrat == null)
+                                                     <option value ="{{$contrat->id}}">{{$contrat->nom}}</option>
+                                             @endif
                                         @endforeach
                                     @endif
                                 </select>

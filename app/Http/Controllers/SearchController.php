@@ -24,14 +24,15 @@ class SearchController extends Controller
         $query_c = ['contrat_id', '=',  $request->input('contrat')];
         $query_dep = ['departement', '=',  $request->input('departement')];
 
+
         if($request->input('departement') == null) {
             $this->user = User::where([$query_do,$query_c])
                 ->get();
-            if($request->input('domaine') == 1 && $request->input('contrat') != 1) {
+            if($request->input('domaine') == null && $request->input('contrat') != null) {
                 $this->user = User::where([$query_c])
                     ->get();
             }
-            if($request->input('domaine') != 1 && $request->input('contrat') == 1) {
+            if($request->input('domaine') != null && $request->input('contrat') == null) {
                 $this->user = User::where([$query_do])
                     ->get();
             }
@@ -39,15 +40,15 @@ class SearchController extends Controller
         else {
             $this->user = User::where([$query_do,$query_c, $query_dep])
                 ->get();
-            if($request->input('domaine') != 1 && $request->input('contrat') == 1) {
+            if($request->input('domaine') != null && $request->input('contrat') == null) {
                 $this->user = User::where([$query_do,$query_dep])
                     ->get();
             }
-            if($request->input('domaine') == 1 && $request->input('contrat') != 1) {
+            if($request->input('domaine') == null && $request->input('contrat') != null) {
                 $this->user = User::where([$query_c,$query_dep])
                     ->get();
             }
-            if($request->input('domaine') == 1 && $request->input('contrat') == 1) {
+            if($request->input('domaine') == null && $request->input('contrat') == null) {
                 $this->user = User::where([$query_dep])
                     ->get();
             }

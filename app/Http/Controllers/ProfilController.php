@@ -17,10 +17,9 @@ class ProfilController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $domaines = Domaine::where([['id', '<>',  $user->domaine_id],['id', '<>',  1]])
-            ->get();
-        $contrats = Contrat::where([['id', '<>',  $user->contrat_id],['id', '<>',  1]])
-            ->get();
+        $domaines = Domaine::all();
+        $contrats = Contrat::all();
+
         return view('profil',['utilisateur' => $user, 'domaines' => $domaines, 'contrats' => $contrats]);
     }
 
@@ -35,12 +34,12 @@ class ProfilController extends Controller
         $user->competence = $request->input('competence');
         $user->email = $request->input('email');
 
-        if($request->input('domaine') != null) {
+        if($request->input('domaine') != "") {
             $domaine = Domaine::find($request->input('domaine'));
             $user->domaine_id = $domaine->id;
         }
 
-        if($request->input('contrat') != null) {
+        if($request->input('contrat') != "") {
             $contrat = Contrat::find($request->input('contrat'));
             $user->contrat_id = $contrat->id;
         }
