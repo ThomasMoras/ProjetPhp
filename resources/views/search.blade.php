@@ -89,8 +89,16 @@
                 <tr>
                     <td>{{$user->name}}</td>
                     <td>{{$user->prenom}}</td>
-                    <td>{{$user->domaine->nom}}</td>
+                    @if($user->domaine != null)
+                        <td>{{$user->domaine->nom}}</td>
+                    @else
+                        <td>Abscence de valeur</td>
+                    @endif
+                    @if($user->contrat != null)
                     <td>{{$user->contrat->nom}}</td>
+                    @else
+                        <td>Abscence de valeur</td>
+                    @endif
                     <td>{{$user->departement}}</td>
                 </tr>
                 @endforeach

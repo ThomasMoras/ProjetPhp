@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('created_at', 'DESC')->get();
         $user = auth()->user();
         return view('home',['utilisateurs' => $users, 'current_user' => $user]);
     }

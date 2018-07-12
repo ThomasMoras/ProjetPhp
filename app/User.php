@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-    'name', 'prenom', 'description', 'departement', 'email', 'password', 'domaine_id', 'contrat_id', 'image'
+    'name', 'prenom', 'description', 'departement', 'email', 'password', 'domaine_id', 'contrat_id', 'image', 'competence'
 ];
 
     /**
@@ -35,7 +35,5 @@ class User extends Authenticatable
         return $this->belongsTo(Contrat::class);
     }
 
-    public function competences() {
-        return $this->belongsToMany(Competence::class);
-    }
+
 }

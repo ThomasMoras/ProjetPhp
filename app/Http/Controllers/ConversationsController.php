@@ -16,19 +16,14 @@ class ConversationsController extends Controller
 {
 
     /**
-     * @var ConversationRepository
-     */
-    private $repo;
-    /**
      * @var AuthManager
      */
     private $auth;
-    private $user;
 
-    public function __construct(ConversationRepository $conversationRepository, AuthManager $auth)
+
+    public function __construct(AuthManager $auth)
     {
         $this->middleware('auth');
-        $this->repo = $conversationRepository;
         $this->auth = $auth;
     }
 

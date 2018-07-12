@@ -70,17 +70,11 @@ class RegisterController extends Controller
             'prenom' =>  "",
             'departement' => 0,
             'description' => "",
-            'domaine_id' => 1,
-            'contrat_id' => 1,
+            'competence' => "",
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
-        $domaine = new Domaine();
-        $domaine->nom = "Inconnu";
-        $user->domaine()->associate($domaine);
-        $contrat = new Contrat();
-        $contrat->nom = "Inconnu";
-        $user->contrat()->associate($contrat);
+
         return $user;
     }
 }

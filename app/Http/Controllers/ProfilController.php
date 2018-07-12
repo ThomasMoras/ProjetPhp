@@ -28,19 +28,11 @@ class ProfilController extends Controller
     {
         $user = auth()->user();
 
-        if($request->input('image_file') != null) {
-            $this->validate($request, [
-                'image_file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            ]);
-            $imageName = time().'.'.$request->image_file->getClientOriginalExtension();
-            $request->image_file->move(public_path('images'), $imageName);
-            $user->image = $imageName;
-        }
-
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
         $user->description = $request->input('description');
         $user->departement = $request->input('departement');
+        $user->competence = $request->input('competence');
         $user->email = $request->input('email');
 
         if($request->input('domaine') != null) {
@@ -53,7 +45,20 @@ class ProfilController extends Controller
             $user->contrat_id = $contrat->id;
         }
 
+        if($request->file() != null) {
+
+            $this->validate($request, [
+                'image_file' => 'required|image|mimes:jpeg,png,jpg,gif',
+            ]);
+
+            $imageName = time().'.'.$request->image_file->getClientOriginalExtension();
+            $request->image_file->move(public_path('images'), $imageName);
+
+            $user->image = $imageName;
+        }
+
         $user->save();
+
         return redirect()->route('profil');
     }
 

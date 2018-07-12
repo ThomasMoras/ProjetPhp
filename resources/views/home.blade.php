@@ -35,7 +35,9 @@
         <a href="#" class="logo"><img src="assets/img/logo.png" alt="" /></a>
         <header>
             <h2>{{$current_user->name }}   {{$current_user->prenom}}</h2>
-            <p>{{$current_user->domaine->nom}}</p>
+            @if($current_user->domaine != null)
+                <p>{{$current_user->domaine->nom}}</p>
+            @endif
         </header>
     </section>
 
@@ -54,7 +56,9 @@
             <h2>Description</h2>
             <p>{{$current_user->description}}</p>
             <h2>Contrat</h2>
-            <p>{{$current_user->contrat->nom}}</p>
+            @if($current_user->domaine != null)
+                <p>{{$current_user->contrat->nom}}</p>
+            @endif
             <h2>Inscrit le</h2>
             <p>{{$current_user->created_at}}</p>
             <ul class="actions">

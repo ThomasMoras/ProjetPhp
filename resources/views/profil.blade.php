@@ -95,7 +95,7 @@
                     <div class="row">
                         <label class="col-2 control-label" for="textinput">Compétence</label>
                         <div class="col-10">
-                            <input type="text" placeholder="Address Line 2" class="form-control">
+                            <input type="text" name="competence" placeholder="Java, C++, Php" class="form-control" id="competence" value="{{$utilisateur->competence}}">
                         </div>
                     </div>
                 </div>
