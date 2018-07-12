@@ -32,6 +32,7 @@ Route::post('/profil', 'ProfilController@create')->name('profil');
 
 Route::get('/search', 'SearchController@index')->name('search');
 
+Route::post('/search', 'SearchController@create')->name('search');
 
 Route::get('/conversations', 'ConversationsController@index')->name('conversations');
 Route::get('/conversations/{user}', 'ConversationsController@show')
