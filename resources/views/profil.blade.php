@@ -13,7 +13,7 @@
                 <legend style="text-align: center; font-size: 25px">Modification des informations</legend>
                 <!-- Text input-->
                 @if($utilisateur->image != null)
-                <img src="/images/{{ $utilisateur->image }}">
+                <img src="/images/{{ $utilisateur->image }}" style="max-width: 400px; max-height: 200px">
                 @endif
                 <div class="row">
 

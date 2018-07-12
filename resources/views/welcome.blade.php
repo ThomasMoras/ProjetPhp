@@ -1,4 +1,3 @@
-@extends('layouts.headerm')
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,8 +15,7 @@
 
     <!-- Custom styles for this template-->
     <link href="assets/css/ionicons.min.css" rel="stylesheet">
-
-
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
@@ -30,7 +28,7 @@
 </head>
 
 <body>
-@section('main')
+
 <div id="h">
     <div class="logo">
         <h2>KiproMeet</h2>
@@ -335,7 +333,6 @@
         </div>
     </div><!--/container-->
 </div><!--/.F-->
-@endsection
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
