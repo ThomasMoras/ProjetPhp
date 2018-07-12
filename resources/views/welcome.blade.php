@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.headerm')
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,12 +11,12 @@
 
     <title>KiproMeet</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS-->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="assets/css/ionicons.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -38,7 +38,7 @@
     <div class="container centered">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>Bienvenue sur le site <b>KiproMeet</b>.<br/>Ici, vous pourrez rencontrer des professionnels pour discuter ou réaliser des projets.</h1>
+                <h2>Bienvenue sur le site <b>KiproMeet</b>.<br/>Ici, vous pourrez rencontrer des professionnels pour discuter ou réaliser des projets.</h2>
             </div>
         </div><!--/row-->
 
@@ -57,14 +57,14 @@
             </div><!--/col-md-4-->
 
             <div class="col-sm-4">
-            <h3><button class="btn btn-conf btn-clear">Inscription</button></h3>
+                <h3><a href="{{ route('register') }}"><input type="button" class="btn btn-conf btn-clear"  value="Inscription"/></a></h3>
             </div>
 
             <div class="col-sm-4">
             </div>
 
             <div class="col-sm-4">
-                <h3><button class="btn btn-conf btn-clear">Se connecter</button></h3>
+                <h3><a href="{{ route('login') }}"><input type="button" class="btn btn-conf btn-clear"  value="Se connecter"/></a></h3>
             </div>
         </div><!--/row-->
     </div><!--/container-->
@@ -73,7 +73,7 @@
 <div id="g">
     <div class="container">
         <div class="row centered">
-            <h2>Domaines professionels disponibles :</h2>
+            <h4>Domaines professionels disponibles :</h4>
         </div><!--/row-->
     </div><!--/.container-->
     <div class="portfolio-centered mt">
@@ -84,9 +84,8 @@
                     <img src="assets/img/portfolio/agriculture.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">Agricueture</h3>
+                            <h3 class="a1" data-animate="fadeInDown">Agriculture</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/agriculture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -99,7 +98,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Architecture, urbanisme, paysage</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/architecture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -112,7 +110,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Art, design, Artisanat d'art, Arts du spectacle</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/art.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -124,9 +121,7 @@
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Audiovisuel, Communication, Journalisme</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/audiovisuel.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
-                        </div><!-- he bg -->
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/audiovisuel.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a></div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
@@ -138,7 +133,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Banque, assurance</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/banque.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -151,7 +145,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Commerce, distribution</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/commerce.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -164,7 +157,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Comptabilité, gestion, ressources humaines</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/comptabilite.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -177,7 +169,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Culture et patrimoine, Bâtiment et travaux publics</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/culture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -190,7 +181,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Défense, Droit, justice</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/defense.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -203,7 +193,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Édition, librairie, bibliothèque</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/edition.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -216,7 +205,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Fonction publique, Enseignement, Recherche</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/enseignement.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -228,7 +216,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Environnement, Filière bois</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/environnement.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -240,7 +227,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Hôtellerie, restauration</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/hotellerie.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -252,7 +238,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Informatique et réseaux, Jeu vidéo</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/jeuvideo.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -264,7 +249,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Logistique et transport</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/logistique.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -276,7 +260,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Maintenance, entretien</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/maintenance.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -288,7 +271,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Marketing, publicité</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/marketing.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -300,7 +282,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Médical, Paramédical</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/medical.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -312,7 +293,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Sécurité, Social</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/securite.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -324,7 +304,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Sport, Tourisme</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/sport.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -336,7 +315,6 @@
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">Traduction, interprétation</h3>
                             <a data-rel="prettyPhoto" href="assets/img/portfolio/traduction.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
