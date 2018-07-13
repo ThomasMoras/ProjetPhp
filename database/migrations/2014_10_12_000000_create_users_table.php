@@ -19,18 +19,16 @@ class CreateUsersTable extends Migration
             $table->string('prenom')->nullable();
             $table->string('description')->nullable();
             $table->integer('departement')->nullable();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->integer('domaine_id')->unsigned();
+            $table->integer('domaine_id')->unsigned()->nullable();
             $table->foreign('domaine_id')->references('id')->on('domaine');
+            $table->integer('contrat_id')->unsigned()->nullable();
+            $table->foreign('contrat_id')->references('id')->on('contrat');
+            $table->string('competence')->nullable();
+            $table->string('email')->unique();
+            $table->string('image')->nullable();
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-        });
-
-
-        Schema::table('cart_items', function(Blueprint $table)
-        {
-            $table->foreign('domaine_id')->references('id')->on('domaine');
         });
     }
 

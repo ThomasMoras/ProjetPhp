@@ -9,4 +9,8 @@ class Contrat extends Model
     protected $fillable = [
         'nom'
     ];
+
+    public function user() {
+        return $this->hasOne('User','contrat_id');
+    }
 }

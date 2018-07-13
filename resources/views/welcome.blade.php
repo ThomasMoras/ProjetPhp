@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,14 @@
     <meta name="author" content="">
     <link rel="icon" href="assets/img/favicon.ico">
 
-    <title>BASIC - Blacktie.co Free Theme</title>
+    <title>KiproMeet</title>
 
-    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS-->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="assets/css/ionicons.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
@@ -32,62 +31,47 @@
 
 <div id="h">
     <div class="logo">
-        <h2>BASIC</h2>
+        <h2>KiproMeet</h2>
     </div><!--/logo-->
     <div class="container centered">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <h1>Hello, my name is <b>Daniel White</b>.<br/>I create for the web.</h1>
+                <h2>Bienvenue sur le site <b>KiproMeet</b>.<br/>Ici, vous pourrez rencontrer des professionnels pour discuter ou réaliser des projets.</h2>
             </div>
         </div><!--/row-->
 
         <div class="row mt">
             <div class="col-sm-4">
                 <i class="ion-ios7-monitor-outline"></i>
-                <h3>Web Design</h3>
+                <h3>Inscription gratuite</h3>
+            </div><!--/col-md-4-->
+
+            <div class="col-sm-4">
             </div><!--/col-md-4-->
 
             <div class="col-sm-4">
                 <i class="ion-ios7-browsers-outline"></i>
-                <h3>UI Development</h3>
+                <h3>Tous domaines profesionnels disponible</h3>
             </div><!--/col-md-4-->
 
             <div class="col-sm-4">
-                <i class="ion-ios7-copy-outline"></i>
-                <h3>Brand Identity</h3>
-            </div><!--/col-md-4-->
+                <h3><a href="{{ route('register') }}"><input type="button" class="btn btn-conf btn-clear"  value="Inscription"/></a></h3>
+            </div>
 
+            <div class="col-sm-4">
+            </div>
+
+            <div class="col-sm-4">
+                <h3><a href="{{ route('login') }}"><input type="button" class="btn btn-conf btn-clear"  value="Se connecter"/></a></h3>
+            </div>
         </div><!--/row-->
     </div><!--/container-->
 </div><!--H-->
 
-<div class="container ptb">
-    <div class="row">
-        <h2 class="centered mb">I craft handsome sites & stunning apps<br/>that empower your startup.</h2>
-        <div class="col-md-6">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-        </div><!--/col-md-6-->
-        <div class="col-md-6">
-            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software.</p>
-        </div><!--/col-md-6-->
-    </div><!--/row-->
-</div><!-- /.container -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <img src="assets/img/items.png" class="img-responsive" alt="">
-        </div>
-    </div><!--/row-->
-</div><!--/.container-->
-
 <div id="g">
     <div class="container">
         <div class="row centered">
-            <h2>Check some of my latest works.</h2>
-            <div class="col-md-8 col-md-offset-2">
-                <p>Contrary to popular belief, Lorem Ipsum is not simply random text.<br/>It has roots in a piece of classical Latin literature<br/>from 45 BC, making it over 2000 years old.</p>
-
-            </div><!--/col-md-8-->
+            <h4>Domaines professionels disponibles :</h4>
         </div><!--/row-->
     </div><!--/.container-->
     <div class="portfolio-centered mt">
@@ -95,12 +79,11 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_09.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/agriculture.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_09.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Agriculture</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/agriculture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -108,12 +91,11 @@
 
             <div class="portfolio-item web-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_02.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/architecture.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_02.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Architecture, urbanisme, paysage</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/architecture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -121,12 +103,11 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_03.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/art.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_03.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Art, design, Artisanat d'art, Arts du spectacle</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/art.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -134,25 +115,22 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_04.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/audiovisuel.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_04.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
-                        </div><!-- he bg -->
+                            <h3 class="a1" data-animate="fadeInDown">Audiovisuel, Communication, Journalisme</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/audiovisuel.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a></div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
 
             <div class="portfolio-item books">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_05.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/banque.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_05.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Banque, assurance</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/banque.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -160,12 +138,11 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_06.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/commerce.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_06.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Commerce, distribution</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/commerce.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -173,12 +150,11 @@
 
             <div class="portfolio-item web-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_07.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/comptabilite.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Web Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_07.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Comptabilité, gestion, ressources humaines</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/comptabilite.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -186,12 +162,11 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_08.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/culture.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_08.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Culture et patrimoine, Bâtiment et travaux publics</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/culture.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -199,12 +174,11 @@
 
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_01.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/defense.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Graphic Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_01.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Défense, Droit, justice</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/defense.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
@@ -212,59 +186,147 @@
 
             <div class="portfolio-item books">
                 <div class="he-wrap tpl6">
-                    <img src="assets/img/portfolio/portfolio_10.jpg" class="img-responsive" alt="">
+                    <img src="assets/img/portfolio/edition.jpg" class="img-responsive" alt="">
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
-                            <h3 class="a1" data-animate="fadeInDown">A Book Design Item</h3>
-                            <a data-rel="prettyPhoto" href="assets/img/portfolio/portfolio_10.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
-                            <a href="single-project.html" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            <h3 class="a1" data-animate="fadeInDown">Édition, librairie, bibliothèque</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/edition.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/enseignement.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Fonction publique, Enseignement, Recherche</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/enseignement.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/environnement.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Environnement, Filière bois</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/environnement.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/hotellerie.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Hôtellerie, restauration</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/hotellerie.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/jeuvideo.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Informatique et réseaux, Jeu vidéo</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/jeuvideo.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/logistique.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Logistique et transport</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/logistique.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/maintenance.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Maintenance, entretien</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/maintenance.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/marketing.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Marketing, publicité</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/marketing.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/medical.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Médical, Paramédical</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/medical.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/securite.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Sécurité, Social</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/securite.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/sport.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Sport, Tourisme</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/sport.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                        </div><!-- he bg -->
+                    </div><!-- he view -->
+                </div><!-- he wrap -->
+            </div><!-- end col-12 -->
+            <div class="portfolio-item graphic-design">
+                <div class="he-wrap tpl6">
+                    <img src="assets/img/portfolio/traduction.jpg" class="img-responsive" alt="">
+                    <div class="he-view">
+                        <div class="bg a0" data-animate="fadeIn">
+                            <h3 class="a1" data-animate="fadeInDown">Traduction, interprétation</h3>
+                            <a data-rel="prettyPhoto" href="assets/img/portfolio/traduction.jpg" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
                         </div><!-- he bg -->
                     </div><!-- he view -->
                 </div><!-- he wrap -->
             </div><!-- end col-12 -->
         </div><!-- portfolio -->
-    </div><!-- portfolio container -->
+    </div>
+</div>
 
-    <div class="container mt">
-        <div class="row clients centered">
-            <p class="mb">Some clients that I had the pleasure to working for.</p>
-            <div class="col-sm-2 col-sm-offset-1">
-                <img src="assets/img/client1.png" alt="">
-            </div>
-            <div class="col-sm-2">
-                <img src="assets/img/client3.png" alt="">
-            </div>
-            <div class="col-sm-2">
-                <img src="assets/img/client2.png" alt="">
-            </div>
-            <div class="col-sm-2">
-                <img src="assets/img/client4.png" alt="">
-            </div>
-            <div class="col-sm-2">
-                <img src="assets/img/client5.png" alt="">
-            </div>
-        </div><!--/row-->
-    </div><!--/container-->
-</div><!--/.G-->
-
-<div id="sep">
-    <div class="container">
-        <div class="row centered">
-            <div class="col-md-8 col-md-offset-2">
-                <h1>I live in the amazing San Francisco</h1>
-                <h3 class="mb">Lorem Ipsum is simply dummy text<br/>of the printing and typesetting industry.</h3>
-                <button class="btn btn-conf btn-clear">Request for Information</button>
-            </div>
-        </div><!--/row-->
-    </div><!--/container-->
-</div><!--/.sep-->
 
 <div id="f">
     <div class="container">
         <div class="row centered">
             <div class="col-md-8 col-md-offset-2">
                 <a href="#"><i class="ion-social-twitter"></i></a>
-                <a href="#"><i class="ion-social-dribbble"></i></a>
                 <a href="#"><i class="ion-social-instagram"></i></a>
                 <a href="#"><i class="ion-social-facebook"></i></a>
             </div><!--/col-md-8-->

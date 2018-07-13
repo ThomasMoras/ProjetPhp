@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-    'name', 'prenom', 'description', 'departement', 'email', 'password',
+    'name', 'prenom', 'description', 'departement', 'email', 'password', 'domaine_id', 'contrat_id', 'image', 'competence'
 ];
 
     /**
@@ -27,21 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function domaine(){
-        return  $this->hasOne(Domaine::class);
+    public function domaine() {
+        return $this->belongsTo(Domaine::class);
     }
 
-//    public function Contrat(){
-//        return  $this->hasOne(Contrat::class);
-//    }
+    public function contrat() {
+        return $this->belongsTo(Contrat::class);
+    }
 
-//    public function competences()
-//    {
-//        return $this->belongsToMany('App\Competence');
-//    }
 
-//    public function competences()
-//    {
-//        return $this->belongsToMany(Competence::class);
-//    }
 }

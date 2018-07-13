@@ -10,8 +10,7 @@ class Domaine extends Model
         'nom'
     ];
 
-    public function user()
-    {
-        return $this->hasMany('App\User');
+    public function user() {
+        return $this->hasOne('User','domaine_id');
     }
 }

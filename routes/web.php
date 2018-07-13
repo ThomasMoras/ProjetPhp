@@ -11,11 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use projetPhp\User;
 
 Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+
+
+Route::get('/', function () {
+    $users = User::all();
+    return view('welcome',['utilisateurs' => $users]);
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -24,3 +31,10 @@ Route::get('/profil', 'ProfilController@index')->name('profil');
 Route::post('/profil', 'ProfilController@create')->name('profil');
 
 Route::get('/search', 'SearchController@index')->name('search');
+
+Route::post('/search', 'SearchController@create')->name('search');
+
+Route::get('/conversations', 'ConversationsController@index')->name('conversations');
+Route::get('/conversations/{user}', 'ConversationsController@show')
+    ->name('conversations.show');
+Route::post('/conversations/{user}', 'ConversationsController@store')->name('conversations.store');;

@@ -2,9 +2,10 @@
 
 namespace projetPhp\Http\Controllers;
 
+use Carbon\Carbon;
+use projetPhp\Contrat;
 use projetPhp\Domaine;
 use Illuminate\Http\Request;
-use projetPhp\Profil;
 
 class ProfilController extends Controller
 {
@@ -17,23 +18,47 @@ class ProfilController extends Controller
     {
         $user = auth()->user();
         $domaines = Domaine::all();
-        return view('profil',['utilisateur' => $user, 'domaines' => $domaines]);
+        $contrats = Contrat::all();
+
+        return view('profil',['utilisateur' => $user, 'domaines' => $domaines, 'contrats' => $contrats]);
     }
 
     public function create(Request $request)
     {
         $user = auth()->user();
-        $domaine = new Domaine(['nom' => $request->input('domaine')]);
+
         $user->name = $request->input('name');
         $user->prenom = $request->input('prenom');
         $user->description = $request->input('description');
         $user->departement = $request->input('departement');
+        $user->competence = $request->input('competence');
+        $user->email = $request->input('email');
 
-        $domaine->user_id = $user->id;
-        $user->domaine()->save($domaine);
-//        $user->load('domaine');
+        if($request->input('domaine') != "") {
+            $domaine = Domaine::find($request->input('domaine'));
+            $user->domaine_id = $domaine->id;
+        }
+
+        if($request->input('contrat') != "") {
+            $contrat = Contrat::find($request->input('contrat'));
+            $user->contrat_id = $contrat->id;
+        }
+
+        if($request->file() != null) {
+
+            $this->validate($request, [
+                'image_file' => 'required|image|mimes:jpeg,png,jpg,gif',
+            ]);
+
+            $imageName = time().'.'.$request->image_file->getClientOriginalExtension();
+            $request->image_file->move(public_path('images'), $imageName);
+
+            $user->image = $imageName;
+        }
+
         $user->save();
-        return $user;
+
+        return redirect()->route('profil');
     }
 
 }
