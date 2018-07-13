@@ -19,7 +19,7 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">{{ $user->name }}</div>
+                    <div class="card-header">Message</div>
                     <div class="card-body conversations">
                         @foreach($messages as $message)
                             <div class="row">

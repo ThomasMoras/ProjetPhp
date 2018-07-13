@@ -13,13 +13,19 @@
                                     @if($user->domaine != null)
                                         <h3>{{$user->domaine->nom}}</h3>
                                     @endif
-                                    <p>{{$user->competence}}</p>
+                                    @if($user->competence != null)
+                                        <p>{{$user->competence}}</p>
+                                    @endif
                                 </div>
                                 <div class="meta">
-                                    <img src="images/{{$user->image}}" alt="" style="height: 100%;width: 100%"/>
+                                    @if($current_user->image != null)
+                                        <img src="images/{{$user->image}}" alt="" style="height: 100%;width: 100%"/>
+                                    @endif
                                 </div>
                             </header>
-                            <p>{{$user->description}} </p>
+                            @if($current_user->description != null)
+                                <p>{{$user->description}} </p>
+                            @endif
                         </article>
                     @endif
                 @endforeach
@@ -39,7 +45,9 @@
                 @if($current_user->domaine != null)
                     <h3>{{$current_user->domaine->nom}}</h3>
                 @endif
-                <p>{{$current_user->competence}}</p>
+                @if($current_user->competence != null)
+                    <p>{{$current_user->competence}}</p>
+                @endif
             </header>
         </section>
 
@@ -48,7 +56,9 @@
             <div class="mini-posts">
                 <!-- Mini Post -->
                 <article class="mini-post">
-                    <img src="images/{{$current_user->image}}" alt="" style="max-height: 300px;max-width: 350px"/>
+                    @if($current_user->image != null)
+                        <img src="images/{{$current_user->image}}" alt="" style="max-height: 300px;max-width: 350px"/>
+                    @endif
                 </article>
             </div>
 
@@ -56,15 +66,19 @@
             <!-- About -->
             <section class="blurb">
                 <h2>Description</h2>
-                <p>{{$current_user->description}}</p>
+                @if($current_user->description != null)
+                    <p>{{$current_user->description}}</p>
+                @endif
                 <h2>Contrat</h2>
-                @if($current_user->domaine != null)
+                @if($current_user->contrat != null)
                     <p>{{$current_user->contrat->nom}}</p>
                 @endif
                 <h2>Inscrit le</h2>
                 <p>{{$current_user->created_at}}</p>
                 <ul class="actions">
-                    <li><a href="#" class="button">Learn More</a></li>
+                    @if($current_user->contrat != null)
+                        <li><a href="#" class="button">Learn More</a></li>
+                    @endif
                 </ul>
             </section>
 
