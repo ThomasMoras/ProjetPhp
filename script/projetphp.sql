@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 12 juil. 2018 à 14:21
+-- Généré le :  ven. 13 juil. 2018 à 07:50
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -27,21 +27,6 @@ USE `projetphp`;
 -- --------------------------------------------------------
 
 --
--- Structure de la table `competences`
---
-
-DROP TABLE IF EXISTS `competences`;
-CREATE TABLE IF NOT EXISTS `competences` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nom` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `contrats`
 --
 
@@ -52,18 +37,17 @@ CREATE TABLE IF NOT EXISTS `contrats` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `contrats`
 --
 
 INSERT INTO `contrats` (`id`, `nom`, `created_at`, `updated_at`) VALUES
-(1, '', NULL, NULL),
+(1, 'CDD', NULL, NULL),
 (2, 'CDI', NULL, NULL),
-(3, 'CDD', NULL, NULL),
-(4, 'Alternance', NULL, NULL),
-(5, 'Stage', NULL, NULL);
+(3, 'Alternance', NULL, NULL),
+(4, 'Stage', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -78,21 +62,22 @@ CREATE TABLE IF NOT EXISTS `domaines` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `domaines`
 --
 
 INSERT INTO `domaines` (`id`, `nom`, `created_at`, `updated_at`) VALUES
-(1, '', NULL, NULL),
-(2, 'Informatique', NULL, NULL),
-(3, 'Gestion de projet\r\n', NULL, NULL),
+(1, 'Informatique', NULL, NULL),
+(2, 'Agriculture', NULL, NULL),
+(3, 'Art', NULL, NULL),
 (4, 'Commerce', NULL, NULL),
-(5, 'Finance', NULL, NULL),
-(6, 'Agriculture', NULL, NULL),
-(7, 'Art', NULL, NULL),
-(8, 'Médical', NULL, NULL);
+(5, 'Droit', NULL, NULL),
+(6, 'Sport', NULL, NULL),
+(7, 'Sécurité', NULL, NULL),
+(8, 'Médical', NULL, NULL),
+(9, 'Environnement', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -111,17 +96,7 @@ CREATE TABLE IF NOT EXISTS `messages` (
   PRIMARY KEY (`id`),
   KEY `from` (`from_id`),
   KEY `to` (`to_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `messages`
---
-
-INSERT INTO `messages` (`id`, `from_id`, `to_id`, `content`, `created_at`, `read_at`) VALUES
-(1, 2, 1, 'salut', '2018-07-12 11:05:03', NULL),
-(2, 1, 2, 'yo', '2018-07-12 11:05:36', NULL),
-(3, 4, 2, 'salut', '2018-07-12 11:24:45', NULL),
-(4, 4, 1, 'yo', '2018-07-12 11:24:57', NULL);
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -135,21 +110,19 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(43, '2014_10_12_000000_create_users_table', 1),
-(44, '2014_10_12_100000_create_password_resets_table', 1),
-(45, '2018_01_04_151925_add_message', 1),
-(46, '2018_07_10_075559_create_profils_table', 1),
-(47, '2018_07_10_112828_create_competences_table', 1),
-(48, '2018_07_10_112838_create_domaines_table', 1),
-(49, '2018_07_10_112849_create_contrats_table', 1),
-(50, '2018_07_10_120849_create_user_competence_table', 1);
+(1, '2014_10_12_000000_create_users_table', 1),
+(2, '2014_10_12_100000_create_password_resets_table', 1),
+(3, '2018_01_04_151925_add_message', 1),
+(4, '2018_07_10_075559_create_profils_table', 1),
+(5, '2018_07_10_112838_create_domaines_table', 1),
+(6, '2018_07_10_112849_create_contrats_table', 1);
 
 -- --------------------------------------------------------
 
@@ -196,8 +169,9 @@ CREATE TABLE IF NOT EXISTS `users` (
   `prenom` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `departement` int(11) DEFAULT NULL,
-  `domaine_id` int(10) UNSIGNED NOT NULL,
-  `contrat_id` int(10) UNSIGNED NOT NULL,
+  `domaine_id` int(10) UNSIGNED DEFAULT NULL,
+  `contrat_id` int(10) UNSIGNED DEFAULT NULL,
+  `competence` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -208,38 +182,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_domaine_id_foreign` (`domaine_id`),
   KEY `users_contrat_id_foreign` (`contrat_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `prenom`, `description`, `departement`, `domaine_id`, `contrat_id`, `email`, `image`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(13, 'Utilisateur 5', 'Name 5', 'En cours', 69, 4, 2, 'use5@gmail.fr', NULL, '$2y$10$QRapilMTsHvSQx5a5i.8/eLsAklnMyv65Id3mUS/9fux3iZC3TuAe', 'bEzrztLBjHfEfQWebWgeX8ml7bSAIm4goS0rhyFG0RC5xMjcL5YpHSyzDtH4', '2018-07-12 12:11:50', '2018-07-12 12:11:50'),
-(12, 'Utilisateur 4', 'Name 4', 'En cours', 42, 2, 4, 'use4@gmail.fr', NULL, '$2y$10$7QuC7x/bpODP09diRNfJYeGeDCaHkYFxqVwWML4/X2.DBjPEzRXOy', 'eaiCCXESUQq8dlnNCp8uyAnlsQoEGZplRqf6ZmxZ9eoWMcqqRrB5EIAy7QQM', '2018-07-12 12:11:25', '2018-07-12 12:11:25'),
-(9, 'Utilisateur 1', 'Name 1', NULL, 54, 2, 4, 'use1@gmail.fr', NULL, '$2y$10$VwnhpLEnf.1C3GghgsR.neqEMA/phXTl9eUmuIAtf7KojVTWJz1v2', 'hZQwnIVYB0Cb045YZBivk9yusKhYCSvPze0ssLqPeFGHsjm5qYeFfwgShzRr', '2018-07-12 12:08:26', '2018-07-12 12:09:16'),
-(10, 'Utilisateur 2', 'Name 2', NULL, 69, 8, 3, 'use2@gmail.fr', NULL, '$2y$10$tQI9Zcw1mdGv5FQRktz3DuJwqBCRLkK/RKzpALnku46ov.emkxGe2', 'RkiYYpFCuH1N6a0RlXM2ZqqFu2jPp3UUJTKlQSFKj00CrgmnnalTyiERpRkZ', '2018-07-12 12:09:59', '2018-07-12 12:10:12'),
-(11, 'Utilisateur 3', 'Name 3', NULL, 10, 5, 2, 'use3@gmail.fr', NULL, '$2y$10$RJChfYuBF58xY/DnrGF6fu0yrlqGp8aBRpttMC5ZgL5fpyHZAHpdG', 'E8uMuDodNvLxvyk0lLRyrGYFKJwmY33Jl1NI1SKxnxy05LLxHYGETu6KM91U', '2018-07-12 12:10:38', '2018-07-12 12:10:55'),
-(14, 'Utilisateur 6', 'Name 6', 'En cours', 69, 4, 3, 'use6@gmail.fr', NULL, '$2y$10$RSOq846BpWV3JuJSZfdfv.jJopkNhWeNhfU6/KN10z3ZwKEvxwgVG', 'Vs9uxbrCJdufD6k1eHLVvs3H35Qxe4ytdCVbLD8vBU0WqSMgcX12oJBE8sxQ', '2018-07-12 12:12:14', '2018-07-12 12:12:14'),
-(15, 'Utilisateur 7', 'Name 7', 'En cours', 10, 3, 4, 'use7@gmail.fr', NULL, '$2y$10$T52PKBh7LagKfP/FjNKElejsEkq1bIPmdzBen4S3U.wEX8KIsRHmW', 'kj8V1LClRkeUcQv9oygXWPniFJhO92YSN2BRHXzZQz8o4SPU5Oz8jCR5Olpy', '2018-07-12 12:12:33', '2018-07-12 12:12:33');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `user_competence`
---
-
-DROP TABLE IF EXISTS `user_competence`;
-CREATE TABLE IF NOT EXISTS `user_competence` (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` int(10) UNSIGNED NOT NULL,
-  `competence_id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_competence_user_id_foreign` (`user_id`),
-  KEY `user_competence_competence_id_foreign` (`competence_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `users` (`id`, `name`, `prenom`, `description`, `departement`, `domaine_id`, `contrat_id`, `competence`, `email`, `image`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Nom 1', 'Prenom 1', 'Blabla', 69, 1, 1, 'Java', 'use1@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:13:56', '2018-07-13 05:26:35'),
+(3, 'Nom 3', 'Prenom 3', 'Blabla', 42, 3, 3, 'Gestion projet', 'use3@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:13:58', '2018-07-13 05:26:35'),
+(2, 'Nom 2', 'Prenom 2', 'Blabla', 93, 8, 2, 'Solid Work', 'use2@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:13:57', '2018-07-13 05:26:35'),
+(4, 'Nom 4', 'Prenom 4', 'Blabla', 69, 9, 4, 'Word', 'use4@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:13:59', '2018-07-13 05:26:35'),
+(5, 'Nom 5', 'Prenom 5', 'Blabla', 91, 7, 2, 'Photoshop', 'use5@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:14:00', '2018-07-13 05:26:35'),
+(6, 'Nom 6', 'Prenom 6', 'Blabla', 42, 4, 4, 'UML', 'use6@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:14:01', '2018-07-13 05:26:35'),
+(7, 'Nom 7', 'Prenom 7', 'Blabla', 12, 3, 1, 'Angular', 'use7@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:14:02', '2018-07-13 05:26:35'),
+(8, 'Nom 8', 'Prenom 8', 'Blabla', 69, 2, 2, 'Laravel', 'use8@gmail.fr', '1531466155.png', '$2y$10$EMwsl.qJizX2s0iwf6DBcemKeNWmTZF9CW.CIICYyOTE5G4Rfyoqe', '7etfJVEajjfQH1LcrFEmE5564h4mJDw6jAOLW7A7LHb1itwwAH6v4WknYdfK', '2018-07-13 05:14:03', '2018-07-13 05:26:35');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
