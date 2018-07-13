@@ -19,13 +19,13 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Message</div>
+                    <div class="card-header">{{ $user_destination->name }}</div>
                     <div class="card-body conversations">
                         @foreach($messages as $message)
                             <div class="row">
-                                <div class="col-md-10 {{ $message->from->id !== $user->id ? 'offset-md-2 text-right' : '' }}">
+                                <div class="col-md-10 {{ $message->from->id !== Auth::user()->id  ? 'offset-md-2 text-right' : '' }}">
                                     <p>
-                                        <strong>{{ $message->from->id !== $user->id ? 'Moi' : $message->from->name }}</strong><br>
+                                        <strong>{{ $message->from->id === Auth::user()->id  ? 'Moi' : $message->from->name }}</strong><br>
                                         {!! nl2br(e($message->content)) !!}
                                     </p>
                                 </div>
@@ -35,7 +35,7 @@
                         <form action="" method="post">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <textarea name="content" placeholder="Ecrivez votre message" class="form-control"></textarea>
+                                <textarea name="content" placeholder="Ecrivez votre message" class="form-control" required></textarea>
                             </div>
                             <button class="btn btn-primary" type="submit">Envoyer</button>
                         </form>

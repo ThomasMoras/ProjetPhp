@@ -49,11 +49,11 @@ class ConversationsController extends Controller
             ->get();
 
         $messages = Message::whereRaw("((from_id = $me->id AND to_id = $user->id) OR (from_id = $user->id AND to_id = $me->id))")
-            ->orderBy('created_at', 'DESC')->get();
+            ->orderBy('created_at', 'ASC')->get();
 
         return view('show', [
             'users' => $users,
-            'user' => $user,
+            'user_destination' => $user,
             'messages' => $messages
         ]);
     }
