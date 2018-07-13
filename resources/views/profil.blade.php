@@ -126,9 +126,7 @@
                     <div class="row">
                         <label class="col-2 control-label" for="textinput">Description</label>
                         <div class="col-10">
-                        <textarea name="description" type="text" class="form-control" id="description" value="{{$utilisateur->description}}">
-                            {{$utilisateur->description}}
-                        </textarea>
+                        <textarea name="description" type="text" class="form-control" id="description" value="{{$utilisateur->description}}">{{$utilisateur->description}}</textarea>
                         </div>
                     </div>
                 </div>

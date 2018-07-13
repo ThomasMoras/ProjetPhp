@@ -27,7 +27,7 @@
     <![endif]-->
 </head>
 
-<body>
+<body style="padding: 0px">
 
 <div id="h">
     <div class="logo">

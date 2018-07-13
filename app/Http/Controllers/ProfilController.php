@@ -17,8 +17,8 @@ class ProfilController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $domaines = Domaine::all();
-        $contrats = Contrat::all();
+        $domaines = Domaine::orderBy('nom', 'ASC')->get();
+        $contrats = Contrat::orderBy('nom', 'ASC')->get();
 
         return view('profil',['utilisateur' => $user, 'domaines' => $domaines, 'contrats' => $contrats]);
     }
