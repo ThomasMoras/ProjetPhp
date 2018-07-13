@@ -38,15 +38,6 @@
 
                 </div>
 
-                <div class="form-group" style="margin-top: 2%">
-                    <div class="row">
-                        <label class="col-2 control-label" for="textinput">Compétence</label>
-                        <div class="col-10">
-                            <input type="text" placeholder="Address Line 2" class="form-control">
-                        </div>
-                    </div>
-                </div>
-
                 <div class="row" style="margin-top: 2%">
                     <label class="col-2 control-label" for="textinput">Contrat</label>
                     <div class="col-10">
@@ -74,42 +65,44 @@
         </form>
     </div><!-- /.col-lg-12 -->
     @if($users != null)
-    <div>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Domaine</th>
-                <th scope="col">Contrat</th>
-                <th scope="col">Département</th>
-            </tr>
-            </thead>
-            <tbody>
-            @if($users->count() > 0)
-                @foreach ($users as $user)
+        <div>
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->prenom}}</td>
-                    @if($user->domaine != null)
-                        <td>{{$user->domaine->nom}}</td>
-                    @else
-                        <td>Abscence de valeur</td>
-                    @endif
-                    @if($user->contrat != null)
-                    <td>{{$user->contrat->nom}}</td>
-                    @else
-                        <td>Abscence de valeur</td>
-                    @endif
-                    <td>{{$user->departement}}</td>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Domaine</th>
+                    <th scope="col">Compétences</th>
+                    <th scope="col">Contrat</th>
+                    <th scope="col">Département</th>
                 </tr>
-                @endforeach
-            @endif
-            </tbody>
-        </table>
-    </div>
-    @endif
-    </div><!-- /.row -->
+                </thead>
+                <tbody>
+                @if($users->count() > 0)
+                    @foreach ($users as $user)
+                        <tr>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->prenom}}</td>
+                            @if($user->domaine != null)
+                                <td>{{$user->domaine->nom}}</td>
+                            @else
+                                <td>Abscence de valeur</td>
+                            @endif
+                            <td>{{$user->competence}}</td>
+                            @if($user->contrat != null)
+                                <td>{{$user->contrat->nom}}</td>
+                            @else
+                                <td>Abscence de valeur</td>
+                            @endif
+                            <td>{{$user->departement}}</td>
+                        </tr>
+                    @endforeach
+                @endif
+                </tbody>
+            </table>
+        </div>
+        @endif
+        </div><!-- /.row -->
 
 
 

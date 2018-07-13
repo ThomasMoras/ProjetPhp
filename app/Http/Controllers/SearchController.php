@@ -53,7 +53,9 @@ class SearchController extends Controller
                     ->get();
             }
         }
-
+        if($request->input('departement') == null && $request->input('domaine') == null && $request->input('contrat') == null) {
+            $this->user = User::all();
+        }
         $domaines = Domaine::all();
         $contrats = Contrat::all();
         return view('search',['domaines' => $domaines, 'contrats' => $contrats, 'users' => $this->user ]);
