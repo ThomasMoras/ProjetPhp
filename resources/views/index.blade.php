@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="container">
-        @foreach($users as $user)
             <div class="row">
+                @foreach($users as $user)
                 <div class="col-md-4">
                     <div class="thumbnail">
                         <div class="card bg-light text-dark">
