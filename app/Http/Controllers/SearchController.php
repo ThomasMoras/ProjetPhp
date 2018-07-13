@@ -12,12 +12,12 @@ class SearchController extends Controller
     private $user;
     public function index()
     {
-        $domaines = Domaine::all();
-        $contrats = Contrat::all();
+        $domaines = Domaine::orderBy('nom', 'ASC')->get();
+        $contrats = Contrat::orderBy('nom', 'ASC')->get();
         $users =  array();
-//        'users' => $users
         return view('search',['domaines' => $domaines, 'contrats' => $contrats, 'users' => $users ]);
     }
+
     public function create(Request $request)
     {
         $query_do = ['domaine_id', '=',  $request->input('domaine')];
